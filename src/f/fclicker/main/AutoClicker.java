@@ -3,14 +3,12 @@ package f.fclicker.main;
 import java.awt.Robot;
 
 public class AutoClicker {
-	
-	private Robot robot;
-	
-	private int delay;
+	Robot r;
+	int d;
 	
 	public AutoClicker() {
 		try {
-			robot = new Robot();
+			r = new Robot();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -19,15 +17,15 @@ public class AutoClicker {
 	
 	public void clickMouse(int button) {
 		try {
-			robot.mousePress(button);
-			robot.delay(250);
-			robot.mouseRelease(button);
-			robot.delay(delay);
+			r.mousePress(button);
+			r.delay(250);
+			r.mouseRelease(button);
+			r.delay(d);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	public void setDelay(int ms) {
-		this.delay = ms;
+		this.d = ms;
 	}
 }
