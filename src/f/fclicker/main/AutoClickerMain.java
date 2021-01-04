@@ -4,18 +4,17 @@ import java.awt.event.InputEvent;
 import java.util.Scanner;
 
 public class AutoClickerMain {
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("---Clicker---");
+		Logger.println("---Clicker---");
 		
-		System.out.println("Wpisz ilosc cps na sekunde: ");
-		int clicks = scanner.nextInt();
+		Logger.println("Wpisz ilosc cps na sekunde: ");
+		int c = scanner.nextInt();
 		
-		System.out.println("Wpisz ilosc ms na milisekunde: ");
-		int delay = scanner.nextInt();
-		System.out.println();
+		Logger.println("Wpisz ilosc ms na milisekunde: ");
+		int d = scanner.nextInt();
 		
-		System.out.println("Clicker startuje za 3 sekundy");
+		Logger.println("Clicker startuje za 3 sekundy");
 		
 		try {
 			Thread.sleep(3000);
@@ -24,12 +23,12 @@ public class AutoClickerMain {
 		}
 		
 		AutoClicker clicker = new AutoClicker();
-		clicker.setDelay(delay);
+		clicker.setDelay(d);
 		
-		for (int i = 0; i < clicks; i++) {
+		for (int i = 0; i < c; i++) {
 			clicker.clickMouse(InputEvent.BUTTON1_MASK);
 		}
 		
-		System.out.println("Clicker wystartowal");
+		Logger.println("Clicker wystartowal");
 	}
 }
